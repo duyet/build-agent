@@ -9,7 +9,7 @@ snippets here are illustrative and may lag the latest release.
 | Framework | File | Official docs / llms |
 |-----------|------|----------------------|
 | LangGraph | `frameworks/langgraph.md` | https://langchain-ai.github.io/langgraph/ · llms.txt: https://langchain-ai.github.io/langgraph/llms.txt |
-| DeepAgents | `frameworks/deepagents.md` | https://github.com/langchain-ai/deepagents · https://docs.langchain.com/labs/deep-agents/overview |
+| DeepAgents | `frameworks/deepagents.md` | https://github.com/langchain-ai/deepagents · JS: https://github.com/langchain-ai/deepagentsjs |
 | Vercel AI SDK | `frameworks/ai-sdk.md` | https://ai-sdk.dev/docs · llms: https://ai-sdk.dev/llms.txt |
 | Cloudflare Agents SDK | `frameworks/cloudflare-agents.md` | https://developers.cloudflare.com/agents/ · llms: https://developers.cloudflare.com/agents/llms-full.txt |
 | TanStack AI | `frameworks/tanstack-ai.md` | https://tanstack.com/ai |

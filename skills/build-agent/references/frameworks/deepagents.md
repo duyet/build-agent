@@ -5,9 +5,11 @@ with a todo/plan tool, a virtual filesystem, and the ability to spawn
 **subagents**. Good for research, coding, and long-horizon tasks that need
 planning + delegation rather than a single tool loop.
 
-**Live docs:** https://github.com/langchain-ai/deepagents ·
-https://docs.langchain.com/labs/deep-agents/overview ·
-Python `deepagents` · JS `deepagents`
+**Live docs:** Python repo https://github.com/langchain-ai/deepagents ·
+JS repo https://github.com/langchain-ai/deepagentsjs ·
+Python `deepagents` · JS `deepagents` ·
+(LangChain hosts moving docs under https://docs.langchain.com — search "deep
+agents" there for the current page; the repo READMEs are the stable source.)
 
 ## Glossary
 - **Planning tool** — lets the agent write/track a todo list (steerable plan).

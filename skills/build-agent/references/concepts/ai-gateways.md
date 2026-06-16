@@ -12,7 +12,8 @@ SDK.
   Optional app-attribution headers (`HTTP-Referer`, `X-Title`).
 - **AnyRouter** (`anyrouter.dev`) — unified gateway with `provider/model` ids,
   app-attribution headers (`X-AnyRouter-*`), provider preferences, streaming,
-  BYOK, and an **MCP server** at `https://anyrouter.dev/api/v1/mcp`. Host skill:
+  and BYOK. Docs: https://anyrouter.dev/docs.md. Also ships an **MCP server**
+  (endpoint `https://anyrouter.dev/api/v1/mcp`, auth-gated). Host skill:
   `anyrouter` (and `anyrouter:anyrouter-migrate` to swap an existing
   Anthropic/OpenAI/OpenRouter integration). Use it when the user names AnyRouter
   or wants a drop-in gateway.

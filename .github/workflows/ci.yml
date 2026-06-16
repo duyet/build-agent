@@ -8,8 +8,16 @@ on:
 
 jobs:
   verify-install:
-    name: Verify skill install (npx skills add)
+    name: Verify skill install
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: shorthand
+            args: duyet/build-agent
+          - name: url-with-skill-flag
+            args: https://github.com/duyet/build-agent --skill build-agent
     steps:
       - uses: actions/checkout@v4
 
@@ -17,13 +25,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install the skill via the skills CLI
+      - name: Install the skill via the skills CLI (${{ matrix.name }})
         run: |
           set -o pipefail
-          npx -y skills add duyet/build-agent | tee install.log
+          npx -y skills add ${{ matrix.args }} | tee install.log
           status=${PIPESTATUS[0]}
           if [ "$status" -ne 0 ]; then
-            echo "::error::'skills add duyet/build-agent' exited with $status"
+            echo "::error::'skills add ${{ matrix.args }}' exited with $status"
             exit "$status"
           fi
           echo "Install command succeeded."
@@ -31,10 +39,12 @@ jobs:
       - name: Verify the installed skill
         run: |
           set -e
-          # 1. Locate the SKILL.md that 'skills add' placed (search outside the repo checkout too)
-          skillmd=$(find "$HOME" "$PWD" -type f -path '*build-agent/SKILL.md' 2>/dev/null | head -1)
+          # 1. Locate the SKILL.md that 'skills add' placed — specifically the install
+          #    location (.agents/skills/...), NOT the repo's own source tree.
+          skillmd=$(find "$HOME" "$PWD" -type f \
+                    -path '*/.agents/skills/build-agent/SKILL.md' 2>/dev/null | head -1)
           if [ -z "$skillmd" ]; then
-            echo "::error::No installed build-agent/SKILL.md found — install did not place the skill"
+            echo "::error::No installed .agents/skills/build-agent/SKILL.md found — install did not place the skill"
             exit 1
           fi
           root=$(dirname "$skillmd")

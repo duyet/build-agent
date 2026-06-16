@@ -1,0 +1,23 @@
+{
+  "name": "build-agent",
+  "version": "0.1.0",
+  "description": "A single skill that knows how to build AI-agent applications end-to-end — interview or detect the stack, then scaffold UI/UX, agent APIs, tools, tracking and gateways across LangGraph, AI SDK, Cloudflare Agents, Google ADK, TanStack AI, DeepAgents and the Claude Agent SDK.",
+  "author": {
+    "name": "duyet",
+    "url": "https://github.com/duyet"
+  },
+  "homepage": "https://github.com/duyet/build-agent",
+  "repository": "https://github.com/duyet/build-agent",
+  "license": "MIT",
+  "keywords": [
+    "ai-agent",
+    "langgraph",
+    "ai-sdk",
+    "cloudflare-agents",
+    "google-adk",
+    "claude-agent-sdk",
+    "tanstack-ai",
+    "deepagents",
+    "agent-scaffold"
+  ]
+}

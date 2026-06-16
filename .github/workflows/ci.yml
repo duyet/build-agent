@@ -105,7 +105,10 @@ jobs:
     # Public repo: skip on forks (no secret access). The live step also skips
     # gracefully when ANTHROPIC_API_KEY is unset, so CI stays green until the
     # secret is added — add it to enable the live check.
-    if: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
+    # DISABLED (2026-06-16): turn the skill-discovery job off. To re-enable,
+    # restore the condition on the next line and remove `if: false`.
+    # if: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
+    if: false
     steps:
       - uses: actions/checkout@v4
 

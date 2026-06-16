@@ -18,18 +18,46 @@ jobs:
           node-version: 20
 
       - name: Install the skill via the skills CLI
-        run: npx -y skills add duyet/build-agent
+        run: |
+          set -o pipefail
+          npx -y skills add duyet/build-agent | tee install.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            echo "::error::'skills add duyet/build-agent' exited with $status"
+            exit "$status"
+          fi
+          echo "Install command succeeded."
 
-      - name: Confirm the skill landed and is well-formed
+      - name: Verify the installed skill
         run: |
           set -e
-          found=$(find "$HOME" . -type f -path '*build-agent*/SKILL.md' 2>/dev/null | head -1)
-          if [ -z "$found" ]; then
-            echo "::error::SKILL.md not found after 'skills add' — install did not place the skill"
+          # 1. Locate the SKILL.md that 'skills add' placed (search outside the repo checkout too)
+          skillmd=$(find "$HOME" "$PWD" -type f -path '*build-agent/SKILL.md' 2>/dev/null | head -1)
+          if [ -z "$skillmd" ]; then
+            echo "::error::No installed build-agent/SKILL.md found — install did not place the skill"
             exit 1
           fi
-          echo "Installed skill at: $found"
-          head -n 12 "$found"
+          root=$(dirname "$skillmd")
+          echo "Installed skill root: $root"
+
+          # 2. Frontmatter must declare name + description
+          grep -q '^name: build-agent' "$root/SKILL.md" \
+            || { echo "::error::frontmatter 'name' missing/incorrect"; exit 1; }
+          grep -q '^description:' "$root/SKILL.md" \
+            || { echo "::error::frontmatter 'description' missing"; exit 1; }
+
+          # 3. Core companion files must come along with the skill
+          for f in \
+            workflows/from-scratch.md \
+            workflows/from-existing.md \
+            references/README.md \
+            references/frameworks/langgraph.md \
+            references/concepts/ai-gateways.md ; do
+            test -f "$root/$f" || { echo "::error::missing $f in installed skill"; exit 1; }
+          done
+
+          echo "Installed skill verified: frontmatter + workflows + references present."
+          head -n 12 "$root/SKILL.md"
 
   validate-manifests:
     name: Validate plugin + marketplace manifests

@@ -94,3 +94,61 @@ jobs:
           grep -q '^name:' skills/build-agent/SKILL.md
           grep -q '^description:' skills/build-agent/SKILL.md
           echo "All manifests valid."
+
+  verify-with-claude:
+    name: Verify skill loads in Claude (headless)
+    runs-on: ubuntu-latest
+    # The jobs above prove the skill *installs* and the manifests parse. This
+    # one proves Claude *discovers* it: preinstall via `skills add`, mirror it
+    # into ~/.claude/skills/ (where Claude Code scans), then ask Claude Code
+    # (headless) to enumerate its available skills.
+    # Public repo: skip on forks (no secret access). The live step also skips
+    # gracefully when ANTHROPIC_API_KEY is unset, so CI stays green until the
+    # secret is added — add it to enable the live check.
+    if: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Preinstall the skill
+        run: |
+          set -o pipefail
+          npx -y skills add duyet/build-agent | tee install.log
+          status=${PIPESTATUS[0]}
+          [ "$status" -eq 0 ] || { echo "::error::'skills add duyet/build-agent' exited with $status"; exit "$status"; }
+
+          src="$GITHUB_WORKSPACE/skills/build-agent/SKILL.md"   # repo's own source — exclude it
+          root=$(dirname "$(find "$HOME" "$GITHUB_WORKSPACE" /tmp -type f \
+                  -path '*build-agent/SKILL.md' 2>/dev/null \
+                  | grep -vx "$src" | head -1)")
+          [ -n "$root" ] || { echo "::error::skill did not install (no SKILL.md outside repo source)"; exit 1; }
+          echo "Installed at: $root"
+
+          # Guarantee Claude Code discovers it regardless of where `skills add`
+          # placed it: mirror the installed root into ~/.claude/skills/.
+          mkdir -p "$HOME/.claude/skills"
+          rm -rf "$HOME/.claude/skills/build-agent"
+          cp -r "$root" "$HOME/.claude/skills/build-agent"
+          echo "Mirrored to: $HOME/.claude/skills/build-agent"
+
+      - name: Ask Claude to list its skills (headless print mode)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::notice::ANTHROPIC_API_KEY not set — skipping live Claude check. Add the repo secret to enable it."
+            exit 0
+          fi
+          set -o pipefail
+          # One assistant turn, no tools: we only want the skill list, not invocation.
+          npx -y @anthropic-ai/claude-code@latest \
+            -p "List every Agent Skill you currently have available. For each, output its name and a one-line description. Then stop." \
+            --output-format text \
+            --max-turns 1 \
+            | tee claude.out
+          grep -qi 'build-agent' claude.out \
+            || { echo "::error::Claude did not list the build-agent skill"; exit 1; }
+          echo "Claude discovered the build-agent skill."

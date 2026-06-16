@@ -1,0 +1,17 @@
+{
+  "name": "build-agent",
+  "plugins": [
+    {
+      "name": "build-agent",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity",
+      "description": "Build AI-agent applications end-to-end — interview or detect the stack, then scaffold core, tools, API, UI, tracing and deploy across LangGraph, AI SDK, Cloudflare Agents, Google ADK, TanStack AI, DeepAgents and the Claude Agent SDK."
+    }
+  ]
+}

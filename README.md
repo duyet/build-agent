@@ -47,21 +47,27 @@ triggers on intent (see [Usage](#usage)), or force it with `/build-agent`.
 </details>
 
 <details>
-<summary>Install in Codex</summary>
+<summary>Install in Codex (plugin)</summary>
 
-Clone the repo, then point Codex at the adapter:
+**Codex CLI** — add this repo as a marketplace and install the plugin:
 
 ```
-git clone https://github.com/duyet/build-agent
+/plugin marketplace add duyet/build-agent
+/plugin install build-agent@build-agent
+/reload-plugins
 ```
 
-- Add `build-agent/codex/AGENTS.md` to your project (or merge its pointer into
-  your own `AGENTS.md`), **or**
-- Load `build-agent/codex/prompts/build-agent.md` as a custom prompt to kick off
-  the workflow.
+`/plugins` opens the browser to search/install interactively, and
+`@branch` / `#tag` pin a version. The plugin is defined by
+`.codex-plugin/plugin.json` and exposes the shared `skills/build-agent` skill.
 
-Both reference the same canonical `skills/build-agent/SKILL.md` — no duplicated
-logic.
+**Codex App** — search/browse for **build-agent**, open its details, and click
+**Install** → **Add to Codex**.
+
+**Manual / headless** — clone the repo and either add `codex/AGENTS.md` to your
+project (or merge its pointer into your own `AGENTS.md`), or load
+`codex/prompts/build-agent.md` as a custom prompt. All paths reference the same
+canonical `skills/build-agent/SKILL.md` — no duplicated logic.
 </details>
 
 # Usage

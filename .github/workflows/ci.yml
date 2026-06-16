@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify-install:
+    name: Verify skill install (npx skills add)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install the skill via the skills CLI
+        run: npx -y skills add duyet/build-agent
+
+      - name: Confirm the skill landed and is well-formed
+        run: |
+          set -e
+          found=$(find "$HOME" . -type f -path '*build-agent*/SKILL.md' 2>/dev/null | head -1)
+          if [ -z "$found" ]; then
+            echo "::error::SKILL.md not found after 'skills add' — install did not place the skill"
+            exit 1
+          fi
+          echo "Installed skill at: $found"
+          head -n 12 "$found"
+
+  validate-manifests:
+    name: Validate plugin + marketplace manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: JSON is parseable + required fields present
+        run: |
+          set -e
+          for f in .claude-plugin/plugin.json .claude-plugin/marketplace.json \
+                   .codex-plugin/plugin.json .agents/plugins/marketplace.json; do
+            echo "Checking $f"
+            jq empty "$f"
+            jq -e '.name' "$f" >/dev/null
+          done
+          # Skill frontmatter must declare name + description
+          grep -q '^name:' skills/build-agent/SKILL.md
+          grep -q '^description:' skills/build-agent/SKILL.md
+          echo "All manifests valid."

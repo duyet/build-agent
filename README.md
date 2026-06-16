@@ -25,14 +25,36 @@ Works in any agent that supports the Agent Skills format. The plans it writes ar
 plain markdown, so any agent (or human) can pick them up.
 
 <details>
-<summary>Manual / per-host install</summary>
+<summary>Install in Claude Code (plugin)</summary>
 
-- **Claude Code (plugin):** clone the repo and load it as a plugin — the
-  `.claude-plugin/plugin.json` exposes the `skills/build-agent` skill.
-- **Codex:** point Codex at `codex/AGENTS.md`, or load
-  `codex/prompts/build-agent.md` as a custom prompt. Both reference the same
-  canonical `skills/build-agent/SKILL.md`.
-- **Any other agent:** drop `skills/build-agent/` into your skills directory.
+Add this repo as a plugin marketplace, then install the plugin:
+
+```
+/plugin marketplace add duyet/build-agent
+/plugin install build-agent@build-agent
+```
+
+That registers the `.claude-plugin/plugin.json` and exposes the
+`skills/build-agent` skill. Then just describe what you want — the skill
+triggers on intent (see [Usage](#usage)), or force it with `/build-agent`.
+</details>
+
+<details>
+<summary>Install in Codex</summary>
+
+Clone the repo, then point Codex at the adapter:
+
+```
+git clone https://github.com/duyet/build-agent
+```
+
+- Add `build-agent/codex/AGENTS.md` to your project (or merge its pointer into
+  your own `AGENTS.md`), **or**
+- Load `build-agent/codex/prompts/build-agent.md` as a custom prompt to kick off
+  the workflow.
+
+Both reference the same canonical `skills/build-agent/SKILL.md` — no duplicated
+logic.
 </details>
 
 # Usage

@@ -1,0 +1,14 @@
+{
+  "name": "build-agent",
+  "owner": {
+    "name": "duyet",
+    "url": "https://github.com/duyet"
+  },
+  "plugins": [
+    {
+      "name": "build-agent",
+      "source": "./",
+      "description": "Single skill that builds AI-agent applications end-to-end — interview or detect the stack, then scaffold UI/UX, agent APIs, tools, tracking and gateways across LangGraph, AI SDK, Cloudflare Agents, Google ADK, TanStack AI, DeepAgents and the Claude Agent SDK."
+    }
+  ]
+}

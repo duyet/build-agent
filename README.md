@@ -5,10 +5,17 @@ end-to-end — from an empty repo or an existing codebase. It interviews you whe
 requirements are unclear, detects your stack when a project already exists, then
 scaffolds the agent loop, tools, API, UI/UX, observability, and deployment.
 
-It knows **LangGraph, DeepAgents, Vercel AI SDK, Cloudflare Agents SDK, TanStack
-AI, Google ADK, and the Claude Agent SDK** — and the cross-cutting concepts:
-building skills, tool calling, tracking/observability, and AI gateways
-(OpenRouter, AnyRouter, Cloudflare AI Gateway).
+It knows **[LangGraph](https://langchain-ai.github.io/langgraph/),
+[DeepAgents](https://github.com/langchain-ai/deepagents),
+[Vercel AI SDK](https://ai-sdk.dev/docs),
+[Cloudflare Agents SDK](https://developers.cloudflare.com/agents/),
+[TanStack AI](https://tanstack.com/ai),
+[Google ADK](https://google.github.io/adk-docs/), and the
+[Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview)** — and the
+cross-cutting concepts: building skills, tool calling, tracking/observability,
+and AI gateways ([OpenRouter](https://openrouter.ai/),
+[AnyRouter](https://anyrouter.dev/docs.md),
+[Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/)).
 
 The idea: **don't hardcode framework APIs that go stale.** The skill keeps a thin
 glossary + a live-doc index and always verifies against official sources
@@ -113,6 +120,25 @@ build-agent/
 - Google ADK multi-agent (Gemini) with built-in evals on Cloud Run.
 - Any of the above behind an OpenRouter / AnyRouter gateway with tracing + cost
   tracking wired from day one.
+
+# Frameworks & references
+
+The skill keeps a thin glossary per framework that **links out to the official,
+up-to-date docs** (and verifies against them before writing code). Official docs
+on the left, the in-repo reference on the right:
+
+| Framework | Official docs | In-repo glossary |
+|-----------|---------------|------------------|
+| [LangGraph](https://langchain-ai.github.io/langgraph/) | [langchain-ai.github.io/langgraph](https://langchain-ai.github.io/langgraph/) · [llms.txt](https://langchain-ai.github.io/langgraph/llms.txt) | [langgraph.md](skills/build-agent/references/frameworks/langgraph.md) |
+| [DeepAgents](https://github.com/langchain-ai/deepagents) | [github.com/langchain-ai/deepagents](https://github.com/langchain-ai/deepagents) · [js](https://github.com/langchain-ai/deepagentsjs) | [deepagents.md](skills/build-agent/references/frameworks/deepagents.md) |
+| [Vercel AI SDK](https://ai-sdk.dev/docs) | [ai-sdk.dev/docs](https://ai-sdk.dev/docs) · [llms.txt](https://ai-sdk.dev/llms.txt) | [ai-sdk.md](skills/build-agent/references/frameworks/ai-sdk.md) |
+| [Cloudflare Agents SDK](https://developers.cloudflare.com/agents/) | [developers.cloudflare.com/agents](https://developers.cloudflare.com/agents/) · [llms](https://developers.cloudflare.com/agents/llms-full.txt) | [cloudflare-agents.md](skills/build-agent/references/frameworks/cloudflare-agents.md) |
+| [TanStack AI](https://tanstack.com/ai) | [tanstack.com/ai](https://tanstack.com/ai) | [tanstack-ai.md](skills/build-agent/references/frameworks/tanstack-ai.md) |
+| [Google ADK](https://google.github.io/adk-docs/) | [google.github.io/adk-docs](https://google.github.io/adk-docs/) · [llms.txt](https://google.github.io/adk-docs/llms.txt) | [google-adk.md](skills/build-agent/references/frameworks/google-adk.md) |
+| [Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview) | [docs.claude.com/…/agent-sdk](https://docs.claude.com/en/api/agent-sdk/overview) | [claude-agent-sdk.md](skills/build-agent/references/frameworks/claude-agent-sdk.md) |
+
+**Gateways:** [OpenRouter](https://openrouter.ai/) · [AnyRouter](https://anyrouter.dev/docs.md) · [Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/) — see [ai-gateways.md](skills/build-agent/references/concepts/ai-gateways.md).
+**Concepts:** [building skills](skills/build-agent/references/concepts/skills.md) · [tool calling](skills/build-agent/references/concepts/tool-calling.md) · [tracking & observability](skills/build-agent/references/concepts/tracking-observability.md).
 
 # License
 

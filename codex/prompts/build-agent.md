@@ -13,7 +13,8 @@ Procedure:
    deploy target (Docker / VM / k3s / cloud / Cloudflare Workers / Vercel).
    Restate the spec before building.
 3. **Choose a framework** with a one-line rationale (LangGraph, DeepAgents,
-   Vercel AI SDK, Cloudflare Agents, TanStack AI, Google ADK, Claude Agent SDK).
+   Vercel AI SDK, Cloudflare Agents, TanStack AI, Google ADK, Claude Agent SDK,
+   Eve, Flue).
 4. **Verify against live docs** (Context7 / llms.txt / WebFetch / installed
    package) before writing any framework code — never rely on memory.
 5. **Scaffold** the minimum that runs, then layer: agent core → tools → model

@@ -15,6 +15,8 @@ snippets here are illustrative and may lag the latest release.
 | TanStack AI | `frameworks/tanstack-ai.md` | https://tanstack.com/ai |
 | Google ADK | `frameworks/google-adk.md` | https://google.github.io/adk-docs/ · llms: https://google.github.io/adk-docs/llms.txt |
 | Claude Agent SDK | `frameworks/claude-agent-sdk.md` | https://docs.claude.com/en/api/agent-sdk/overview |
+| Eve (Vercel) | `frameworks/eve.md` | https://eve.dev/docs · repo: https://github.com/vercel/eve |
+| Flue | `frameworks/flue.md` | https://flueframework.com/docs/ · intro: https://blog.cloudflare.com/agents-platform-flue-sdk/ |
 
 ## Cross-cutting concepts
 | Concept | File |

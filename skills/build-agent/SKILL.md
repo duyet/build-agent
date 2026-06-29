@@ -7,8 +7,8 @@ description: >-
   or set up tool calling, tracing, or an AI gateway. Interviews the user when
   requirements are unclear; detects the stack when a project already exists.
   Knows LangGraph, DeepAgents, Vercel AI SDK, Cloudflare Agents SDK, TanStack AI,
-  Google ADK, and the Claude Agent SDK. Always verifies against live official
-  docs (Context7 / llms.txt / WebFetch) before writing code.
+  Google ADK, the Claude Agent SDK, Eve (Vercel), and Flue. Always verifies
+  against live official docs (Context7 / llms.txt / WebFetch) before writing code.
 ---
 
 # build-agent
@@ -107,6 +107,8 @@ Match the dominant requirement to a framework. Full notes in
 | Provider-agnostic, type-safe streaming/tools/structured output in any TS app | **TanStack AI** | TS |
 | Google-ecosystem, Gemini-first, code-first multi-agent with eval tooling | **Google ADK** | Py / Java |
 | Build on the same harness Claude Code uses; subagents, MCP, hooks, permissions | **Claude Agent SDK** | Py / TS |
+| Filesystem-first durable agent: markdown instructions/skills + TS tools, channels, Vercel-deployed | **Eve** (Vercel) | TS |
+| Headless, programmable agents on a coding-agent harness; run from CI/webhook/cron, deploy Node/Cloudflare | **Flue** | TS |
 
 Mixed needs are common (e.g. LangGraph backend + AI SDK frontend, or Claude
 Agent SDK behind a Cloudflare Worker). Compose; don't force one box.

@@ -1,0 +1,14 @@
+<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="build-agent — one skill that builds AI agents, end to end">
+  <rect width="1280" height="420" rx="24" fill="#0a0a0a"/>
+
+  <!-- same mark: code brackets (build) embracing a node (agent) -->
+  <g stroke="#ffffff" stroke-width="28" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1072 120 H1030 V300 H1072"/>
+    <path d="M1168 120 H1210 V300 H1168"/>
+  </g>
+  <circle cx="1120" cy="210" r="40" fill="#ffffff"/>
+
+  <!-- bold wordmark -->
+  <text x="80" y="216" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-4" fill="#ffffff">build-agent</text>
+  <text x="84" y="274" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="500" fill="#ffffff" fill-opacity="0.55">One skill that builds AI agents — end to end.</text>
+</svg>

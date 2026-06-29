@@ -1,0 +1,10 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="build-agent logo">
+  <rect x="8" y="8" width="224" height="224" rx="56" fill="#0a0a0a"/>
+  <!-- code brackets = build -->
+  <g stroke="#ffffff" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M86 70 H62 V170 H86"/>
+    <path d="M154 70 H178 V170 H154"/>
+  </g>
+  <!-- node = agent -->
+  <circle cx="120" cy="120" r="24" fill="#ffffff"/>
+</svg>

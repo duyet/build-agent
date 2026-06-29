@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="build-agent logo" width="104" height="104">
+</p>
+
+<p align="center">
+  <img src="assets/hero.svg" alt="build-agent — one skill that builds AI agents, end to end" width="100%">
+</p>
+
 # build-agent
 
 A single **Agent Skill** that knows how to build AI-agent applications

@@ -17,6 +17,7 @@ snippets here are illustrative and may lag the latest release.
 | Claude Agent SDK | `frameworks/claude-agent-sdk.md` | https://docs.claude.com/en/api/agent-sdk/overview |
 | Eve (Vercel) | `frameworks/eve.md` | https://eve.dev/docs · repo: https://github.com/vercel/eve |
 | Flue | `frameworks/flue.md` | https://flueframework.com/docs/ · intro: https://blog.cloudflare.com/agents-platform-flue-sdk/ |
+| Pi (pi.dev) | `frameworks/pi.md` | https://pi.dev/docs/latest · repo: https://github.com/earendil-works/pi |
 
 ## Cross-cutting concepts
 | Concept | File |

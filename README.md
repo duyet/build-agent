@@ -12,8 +12,9 @@ It knows **[LangGraph](https://langchain-ai.github.io/langgraph/),
 [TanStack AI](https://tanstack.com/ai),
 [Google ADK](https://google.github.io/adk-docs/), the
 [Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview),
-[Eve](https://github.com/vercel/eve), and
-[Flue](https://flueframework.com/)** — and the
+[Eve](https://github.com/vercel/eve),
+[Flue](https://flueframework.com/), and
+[Pi](https://pi.dev/)** — and the
 cross-cutting concepts: building skills, tool calling, tracking/observability,
 and AI gateways ([OpenRouter](https://openrouter.ai/),
 [AnyRouter](https://anyrouter.dev/docs.md),
@@ -107,7 +108,7 @@ build-agent/
         ├── frameworks/               # langgraph, deepagents, ai-sdk,
         │                             #   cloudflare-agents, tanstack-ai,
         │                             #   google-adk, claude-agent-sdk,
-        │                             #   eve, flue
+        │                             #   eve, flue, pi
         ├── concepts/                 # skills, tool-calling,
         │                             #   tracking-observability, ai-gateways
         └── engineering/              # claude, gemini, gpt prompting
@@ -147,6 +148,7 @@ on the left, the in-repo reference on the right:
 | [Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview) | [docs.claude.com/…/agent-sdk](https://docs.claude.com/en/api/agent-sdk/overview) | [claude-agent-sdk.md](skills/build-agent/references/frameworks/claude-agent-sdk.md) |
 | [Eve](https://github.com/vercel/eve) | [eve.dev/docs](https://eve.dev/docs) · [repo](https://github.com/vercel/eve) | [eve.md](skills/build-agent/references/frameworks/eve.md) |
 | [Flue](https://flueframework.com/) | [flueframework.com/docs](https://flueframework.com/docs/) · [intro](https://blog.cloudflare.com/agents-platform-flue-sdk/) | [flue.md](skills/build-agent/references/frameworks/flue.md) |
+| [Pi](https://pi.dev/) | [pi.dev/docs/latest](https://pi.dev/docs/latest) · [repo](https://github.com/earendil-works/pi) | [pi.md](skills/build-agent/references/frameworks/pi.md) |
 
 **Gateways:** [OpenRouter](https://openrouter.ai/) · [AnyRouter](https://anyrouter.dev/docs.md) · [Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/) — see [ai-gateways.md](skills/build-agent/references/concepts/ai-gateways.md).
 **Concepts:** [building skills](skills/build-agent/references/concepts/skills.md) · [tool calling](skills/build-agent/references/concepts/tool-calling.md) · [tracking & observability](skills/build-agent/references/concepts/tracking-observability.md).

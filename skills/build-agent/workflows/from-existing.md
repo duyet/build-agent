@@ -16,7 +16,7 @@ Inspect manifests and config — don't guess:
 - **Existing agent code**: grep for `langgraph`, `@langchain`, `deepagents`,
   `ai` (Vercel AI SDK), `@cloudflare/agents`, `@tanstack`, `google-adk` /
   `google.adk`, `@anthropic-ai/claude-agent-sdk` / `claude_agent_sdk`,
-  `openai`, `anthropic`, MCP servers.
+  `@earendil-works/pi` (Pi), `openai`, `anthropic`, MCP servers.
 - **Existing conventions**: read CLAUDE.md / AGENTS.md / .cursorrules, lint
   config, test setup, import style.
 

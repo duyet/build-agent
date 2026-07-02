@@ -14,8 +14,10 @@ Inspect manifests and config — don't guess:
 - **Infra**: `Dockerfile`, `docker-compose.yml`, `k8s/` manifests, Terraform,
   `.github/workflows`, `vercel.json`, `wrangler.jsonc`.
 - **Existing agent code**: grep for `langgraph`, `@langchain`, `deepagents`,
-  `ai` (Vercel AI SDK), `@cloudflare/agents`, `@tanstack`, `google-adk` /
-  `google.adk`, `@anthropic-ai/claude-agent-sdk` / `claude_agent_sdk`,
+  `pydantic-ai` / `pydantic_ai`, `ai` (Vercel AI SDK), `@mastra/core` /
+  `mastra`, `@cloudflare/agents`, `@tanstack`, `google-adk` / `google.adk`,
+  `openai-agents` / `@openai/agents` (OpenAI Agents SDK),
+  `@anthropic-ai/claude-agent-sdk` / `claude_agent_sdk`,
   `@earendil-works/pi` (Pi), `openai`, `anthropic`, MCP servers.
 - **Existing conventions**: read CLAUDE.md / AGENTS.md / .cursorrules, lint
   config, test setup, import style.

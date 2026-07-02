@@ -4,9 +4,12 @@ Low-level orchestration framework for stateful, multi-actor agents modeled as
 **graphs**. Best when you need explicit control over the agent loop, durable
 state, branching, and human-in-the-loop.
 
-**Live docs:** https://langchain-ai.github.io/langgraph/ ·
-llms.txt: https://langchain-ai.github.io/langgraph/llms.txt ·
-Python `langgraph` · JS `@langchain/langgraph`
+**Live docs:** https://docs.langchain.com/oss/python/langgraph/overview ·
+LangChain docs index (llms.txt): https://docs.langchain.com/llms.txt ·
+Python `langgraph` · JS `@langchain/langgraph` (the older
+`langchain-ai.github.io/langgraph` docs now redirect to `docs.langchain.com`).
+For LangGraph-specific API docs, prefer Context7 or the host `langgraph-docs`
+skill over the site-wide index.
 
 ## Glossary
 - **StateGraph** — graph whose nodes read/write a shared, typed state.

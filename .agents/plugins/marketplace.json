@@ -11,7 +11,7 @@
         "installation": "AVAILABLE"
       },
       "category": "Productivity",
-      "description": "Build AI-agent applications end-to-end — interview or detect the stack, then scaffold core, tools, API, UI, tracing and deploy across LangGraph, AI SDK, Cloudflare Agents, Google ADK, TanStack AI, DeepAgents and the Claude Agent SDK."
+      "description": "Build AI-agent applications end-to-end — interview or detect the stack, then scaffold core, tools, API, UI, tracing and deploy across 13+ agent frameworks including LangGraph, the Vercel AI SDK, the OpenAI and Claude Agent SDKs, Google ADK, Mastra, Pydantic AI, and more."
     }
   ]
 }

@@ -4,9 +4,9 @@ Google's code-first framework for building, evaluating, and deploying agents —
 **Gemini-first** but model-agnostic. Strong multi-agent composition and built-in
 evaluation; integrates with Vertex AI / Agent Engine for deployment.
 
-**Live docs:** https://google.github.io/adk-docs/ ·
-llms: https://google.github.io/adk-docs/llms.txt ·
-Python `google-adk` · also Java
+**Live docs:** https://adk.dev/ · llms: https://adk.dev/llms.txt ·
+Python `google-adk` · also Java (the older `google.github.io/adk-docs`
+now redirects to `adk.dev`)
 
 ## Glossary
 - **`Agent` / `LlmAgent`** — an LLM-driven agent with instructions + tools.

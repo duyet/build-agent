@@ -5,9 +5,11 @@ harness: the agent loop, tool use, **subagents**, **MCP**, **hooks**,
 **permissions**, and session management. Best when you want a capable coding/
 computer-use agent or to embed Claude Code-style behavior.
 
-**Live docs:** https://docs.claude.com/en/api/agent-sdk/overview ·
+**Live docs:** https://code.claude.com/docs/en/agent-sdk/overview ·
+llms.txt: https://code.claude.com/docs/llms.txt ·
 Python `claude-agent-sdk` · TS `@anthropic-ai/claude-agent-sdk` ·
 host skills: `agents-sdk`, `claude-api`; agents: `agent-sdk-dev:*`
+(the older `docs.claude.com/en/api/agent-sdk/*` links now redirect here)
 
 ## Glossary
 - **`query()` / streaming** — run the agent loop, stream messages/events.

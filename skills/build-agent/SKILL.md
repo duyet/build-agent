@@ -4,12 +4,13 @@ description: >-
   Build an AI-agent application end-to-end — from an empty repo or an existing
   codebase. Use when the user wants to "build an agent", "scaffold an agent
   app", "add an agent API", "build an agent UI/chat", "pick an agent framework",
-  or set up tool calling, tracing, or an AI gateway. Interviews the user when
-  requirements are unclear; detects the stack when a project already exists.
-  Knows LangGraph, DeepAgents, Vercel AI SDK, Cloudflare Agents SDK, TanStack AI,
-  Google ADK, the Claude Agent SDK, Eve (Vercel), Flue, and Pi (pi.dev).
-  Always verifies
-  against live official docs (Context7 / llms.txt / WebFetch) before writing code.
+  or set up tool calling, memory/RAG, an MCP server, tracing, or an AI gateway.
+  Interviews the user when requirements are unclear; detects the stack when a
+  project already exists. Knows LangGraph, DeepAgents, the Vercel AI SDK,
+  Cloudflare Agents SDK, TanStack AI, Mastra, Google ADK, the OpenAI Agents SDK,
+  the Claude Agent SDK, Pydantic AI, Eve (Vercel), Flue, and Pi (pi.dev) — and
+  when to skip a framework entirely. Always verifies against live official docs
+  (Context7 / llms.txt / WebFetch) before writing code.
 ---
 
 # build-agent
@@ -103,14 +104,23 @@ Match the dominant requirement to a framework. Full notes in
 |--------------------|-------------|------|
 | Stateful graphs, supervisor/multi-agent, human-in-loop, checkpointing | **LangGraph** | Py / TS |
 | Opinionated "deep" planning agent (subagents, file tools, todo) on top of LangGraph | **DeepAgents** | Py / TS |
+| Typed Python agents with schema-validated output, dependency injection, OTel tracing | **Pydantic AI** | Py |
 | Web app with streaming chat, tool calls, generative UI; Next.js/React | **Vercel AI SDK** | TS |
+| Batteries-included TS framework (agents + workflows + memory + RAG + evals), standalone or in any JS backend | **Mastra** | TS |
 | Edge-native, durable, stateful agents that scale to zero | **Cloudflare Agents SDK** (Durable Objects) | TS |
 | Provider-agnostic, type-safe streaming/tools/structured output in any TS app | **TanStack AI** | TS |
 | Google-ecosystem, Gemini-first, code-first multi-agent with eval tooling | **Google ADK** | Py / Java |
+| GPT/OpenAI-first, minimal loop with handoffs + guardrails, built-in tracing | **OpenAI Agents SDK** | Py / TS |
 | Build on the same harness Claude Code uses; subagents, MCP, hooks, permissions | **Claude Agent SDK** | Py / TS |
 | Filesystem-first durable agent: markdown instructions/skills + TS tools, channels, Vercel-deployed | **Eve** (Vercel) | TS |
 | Headless, programmable agents on a coding-agent harness; run from CI/webhook/cron, deploy Node/Cloudflare | **Flue** | TS |
 | Minimal provider-agnostic harness to embed (4 tools, tiny prompt) or a unified multi-provider LLM API; compose via extensions | **Pi** (pi.dev) | TS |
+
+**Sometimes the answer is no framework.** For a single agent with a handful of
+tools, a plain provider-SDK tool-calling loop (Anthropic / OpenAI / Google SDK,
+optionally behind a gateway) is less to learn and less to maintain. Reach for a
+framework when you need real orchestration: stateful graphs, durable/long-running
+runs, multi-agent handoffs, human-in-the-loop, checkpointing, or built-in evals.
 
 Mixed needs are common (e.g. LangGraph backend + AI SDK frontend, or Claude
 Agent SDK behind a Cloudflare Worker). Compose; don't force one box.

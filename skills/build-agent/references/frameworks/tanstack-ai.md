@@ -4,7 +4,7 @@ Provider-agnostic, **type-safe** AI toolkit for TS/JS apps: streaming, tool
 calling, structured output, and multimodal content, with first-class framework
 adapters (React, Solid, etc.) in the TanStack style. Headless and composable.
 
-**Live docs:** https://tanstack.com/ai · host skills: `tanstack-ai`,
+**Live docs:** https://tanstack.com/ai/latest/docs · host skills: `tanstack-ai`,
 `tanstack-start`, `tanstack-cli`
 
 ## Glossary
@@ -20,5 +20,7 @@ safety and a headless approach, and prefer TanStack's conventions over the
 Vercel AI SDK.
 
 ## Before coding
-This is a newer, fast-moving library — pull the current docs via the host
-`tanstack-ai` skill or the site before writing code; don't assume API shape.
+This is a newer, fast-moving library — pull the current docs before writing
+code; don't assume API shape. Note `tanstack.com` blocks automated fetchers
+(returns 403), so prefer the host `tanstack-ai` skill or Context7 (`tanstack`)
+over a raw WebFetch of the docs.

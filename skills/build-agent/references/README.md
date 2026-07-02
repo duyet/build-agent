@@ -8,13 +8,16 @@ snippets here are illustrative and may lag the latest release.
 ## Frameworks
 | Framework | File | Official docs / llms |
 |-----------|------|----------------------|
-| LangGraph | `frameworks/langgraph.md` | https://langchain-ai.github.io/langgraph/ · llms.txt: https://langchain-ai.github.io/langgraph/llms.txt |
+| LangGraph | `frameworks/langgraph.md` | https://docs.langchain.com/oss/python/langgraph/overview · llms.txt: https://docs.langchain.com/llms.txt |
 | DeepAgents | `frameworks/deepagents.md` | https://github.com/langchain-ai/deepagents · JS: https://github.com/langchain-ai/deepagentsjs |
+| Pydantic AI | `frameworks/pydantic-ai.md` | https://pydantic.dev/docs/ai/ · llms.txt: https://pydantic.dev/docs/ai/llms.txt |
 | Vercel AI SDK | `frameworks/ai-sdk.md` | https://ai-sdk.dev/docs · llms: https://ai-sdk.dev/llms.txt |
+| Mastra | `frameworks/mastra.md` | https://mastra.ai/docs · llms: https://mastra.ai/llms.txt |
 | Cloudflare Agents SDK | `frameworks/cloudflare-agents.md` | https://developers.cloudflare.com/agents/ · llms: https://developers.cloudflare.com/agents/llms-full.txt |
-| TanStack AI | `frameworks/tanstack-ai.md` | https://tanstack.com/ai |
-| Google ADK | `frameworks/google-adk.md` | https://google.github.io/adk-docs/ · llms: https://google.github.io/adk-docs/llms.txt |
-| Claude Agent SDK | `frameworks/claude-agent-sdk.md` | https://docs.claude.com/en/api/agent-sdk/overview |
+| TanStack AI | `frameworks/tanstack-ai.md` | https://tanstack.com/ai/latest/docs (blocks fetchers → use Context7) |
+| Google ADK | `frameworks/google-adk.md` | https://adk.dev/ · llms: https://adk.dev/llms.txt |
+| OpenAI Agents SDK | `frameworks/openai-agents.md` | Python: https://openai.github.io/openai-agents-python/ · JS: https://openai.github.io/openai-agents-js/ |
+| Claude Agent SDK | `frameworks/claude-agent-sdk.md` | https://code.claude.com/docs/en/agent-sdk/overview · llms.txt: https://code.claude.com/docs/llms.txt |
 | Eve (Vercel) | `frameworks/eve.md` | https://eve.dev/docs · repo: https://github.com/vercel/eve |
 | Flue | `frameworks/flue.md` | https://flueframework.com/docs/ · intro: https://blog.cloudflare.com/agents-platform-flue-sdk/ |
 | Pi (pi.dev) | `frameworks/pi.md` | https://pi.dev/docs/latest · repo: https://github.com/earendil-works/pi |

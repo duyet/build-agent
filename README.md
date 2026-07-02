@@ -13,16 +13,19 @@ end-to-end — from an empty repo or an existing codebase. It interviews you whe
 requirements are unclear, detects your stack when a project already exists, then
 scaffolds the agent loop, tools, API, UI/UX, observability, and deployment.
 
-It knows **[LangGraph](https://langchain-ai.github.io/langgraph/),
+It knows **[LangGraph](https://docs.langchain.com/oss/python/langgraph/overview),
 [DeepAgents](https://github.com/langchain-ai/deepagents),
+[Pydantic AI](https://pydantic.dev/docs/ai/),
 [Vercel AI SDK](https://ai-sdk.dev/docs),
+[Mastra](https://mastra.ai/docs),
 [Cloudflare Agents SDK](https://developers.cloudflare.com/agents/),
-[TanStack AI](https://tanstack.com/ai),
-[Google ADK](https://google.github.io/adk-docs/), the
-[Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview),
+[TanStack AI](https://tanstack.com/ai/latest/docs),
+[Google ADK](https://adk.dev/), the
+[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/), the
+[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview),
 [Eve](https://github.com/vercel/eve),
 [Flue](https://flueframework.com/), and
-[Pi](https://pi.dev/)** — and the
+[Pi](https://pi.dev/)** — when to skip a framework entirely, and the
 cross-cutting concepts: building skills, tool calling, tracking/observability,
 and AI gateways ([OpenRouter](https://openrouter.ai/),
 [AnyRouter](https://anyrouter.dev/docs.md),
@@ -113,9 +116,10 @@ build-agent/
     │   ├── from-scratch.md           # deep interview flow
     │   └── from-existing.md          # techstack-detection flow
     └── references/                   # thin glossary + live-doc links
-        ├── frameworks/               # langgraph, deepagents, ai-sdk,
-        │                             #   cloudflare-agents, tanstack-ai,
-        │                             #   google-adk, claude-agent-sdk,
+        ├── frameworks/               # langgraph, deepagents, pydantic-ai,
+        │                             #   ai-sdk, mastra, cloudflare-agents,
+        │                             #   tanstack-ai, google-adk,
+        │                             #   openai-agents, claude-agent-sdk,
         │                             #   eve, flue, pi
         ├── concepts/                 # skills, tool-calling,
         │                             #   tracking-observability, ai-gateways
@@ -135,6 +139,9 @@ build-agent/
   Vercel.
 - Cloudflare Agents SDK durable agent on Workers, state in Durable Objects.
 - Claude Agent SDK coding agent with subagents, MCP tools, and hooks.
+- OpenAI Agents SDK triage system (Py/TS) with handoffs, guardrails, and tracing.
+- Mastra agent server with durable workflows, memory, and built-in evals.
+- Pydantic AI typed agent with schema-validated output and OTel tracing.
 - Google ADK multi-agent (Gemini) with built-in evals on Cloud Run.
 - Any of the above behind an OpenRouter / AnyRouter gateway with tracing + cost
   tracking wired from day one.
@@ -147,13 +154,16 @@ on the left, the in-repo reference on the right:
 
 | Framework | Official docs | In-repo glossary |
 |-----------|---------------|------------------|
-| [LangGraph](https://langchain-ai.github.io/langgraph/) | [langchain-ai.github.io/langgraph](https://langchain-ai.github.io/langgraph/) · [llms.txt](https://langchain-ai.github.io/langgraph/llms.txt) | [langgraph.md](skills/build-agent/references/frameworks/langgraph.md) |
+| [LangGraph](https://docs.langchain.com/oss/python/langgraph/overview) | [docs.langchain.com/…/langgraph](https://docs.langchain.com/oss/python/langgraph/overview) · [llms.txt](https://docs.langchain.com/llms.txt) | [langgraph.md](skills/build-agent/references/frameworks/langgraph.md) |
 | [DeepAgents](https://github.com/langchain-ai/deepagents) | [github.com/langchain-ai/deepagents](https://github.com/langchain-ai/deepagents) · [js](https://github.com/langchain-ai/deepagentsjs) | [deepagents.md](skills/build-agent/references/frameworks/deepagents.md) |
+| [Pydantic AI](https://pydantic.dev/docs/ai/) | [pydantic.dev/docs/ai](https://pydantic.dev/docs/ai/) · [llms.txt](https://pydantic.dev/docs/ai/llms.txt) | [pydantic-ai.md](skills/build-agent/references/frameworks/pydantic-ai.md) |
 | [Vercel AI SDK](https://ai-sdk.dev/docs) | [ai-sdk.dev/docs](https://ai-sdk.dev/docs) · [llms.txt](https://ai-sdk.dev/llms.txt) | [ai-sdk.md](skills/build-agent/references/frameworks/ai-sdk.md) |
+| [Mastra](https://mastra.ai/docs) | [mastra.ai/docs](https://mastra.ai/docs) · [llms.txt](https://mastra.ai/llms.txt) | [mastra.md](skills/build-agent/references/frameworks/mastra.md) |
 | [Cloudflare Agents SDK](https://developers.cloudflare.com/agents/) | [developers.cloudflare.com/agents](https://developers.cloudflare.com/agents/) · [llms](https://developers.cloudflare.com/agents/llms-full.txt) | [cloudflare-agents.md](skills/build-agent/references/frameworks/cloudflare-agents.md) |
-| [TanStack AI](https://tanstack.com/ai) | [tanstack.com/ai](https://tanstack.com/ai) | [tanstack-ai.md](skills/build-agent/references/frameworks/tanstack-ai.md) |
-| [Google ADK](https://google.github.io/adk-docs/) | [google.github.io/adk-docs](https://google.github.io/adk-docs/) · [llms.txt](https://google.github.io/adk-docs/llms.txt) | [google-adk.md](skills/build-agent/references/frameworks/google-adk.md) |
-| [Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview) | [docs.claude.com/…/agent-sdk](https://docs.claude.com/en/api/agent-sdk/overview) | [claude-agent-sdk.md](skills/build-agent/references/frameworks/claude-agent-sdk.md) |
+| [TanStack AI](https://tanstack.com/ai/latest/docs) | [tanstack.com/ai/latest/docs](https://tanstack.com/ai/latest/docs) | [tanstack-ai.md](skills/build-agent/references/frameworks/tanstack-ai.md) |
+| [Google ADK](https://adk.dev/) | [adk.dev](https://adk.dev/) · [llms.txt](https://adk.dev/llms.txt) | [google-adk.md](skills/build-agent/references/frameworks/google-adk.md) |
+| [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/) | [python](https://openai.github.io/openai-agents-python/) · [js](https://openai.github.io/openai-agents-js/) | [openai-agents.md](skills/build-agent/references/frameworks/openai-agents.md) |
+| [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) | [code.claude.com/…/agent-sdk](https://code.claude.com/docs/en/agent-sdk/overview) · [llms.txt](https://code.claude.com/docs/llms.txt) | [claude-agent-sdk.md](skills/build-agent/references/frameworks/claude-agent-sdk.md) |
 | [Eve](https://github.com/vercel/eve) | [eve.dev/docs](https://eve.dev/docs) · [repo](https://github.com/vercel/eve) | [eve.md](skills/build-agent/references/frameworks/eve.md) |
 | [Flue](https://flueframework.com/) | [flueframework.com/docs](https://flueframework.com/docs/) · [intro](https://blog.cloudflare.com/agents-platform-flue-sdk/) | [flue.md](skills/build-agent/references/frameworks/flue.md) |
 | [Pi](https://pi.dev/) | [pi.dev/docs/latest](https://pi.dev/docs/latest) · [repo](https://github.com/earendil-works/pi) | [pi.md](skills/build-agent/references/frameworks/pi.md) |

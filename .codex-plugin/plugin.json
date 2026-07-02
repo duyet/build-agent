@@ -1,7 +1,7 @@
 {
   "name": "build-agent",
   "version": "0.1.0",
-  "description": "A single skill that builds AI-agent applications end-to-end — interview or detect the stack, then scaffold UI/UX, agent APIs, tools, tracking and gateways across LangGraph, AI SDK, Cloudflare Agents, Google ADK, TanStack AI, DeepAgents and the Claude Agent SDK.",
+  "description": "A single skill that builds AI-agent applications end-to-end — interview or detect the stack, then scaffold UI/UX, agent APIs, tools, tracking and gateways across 13+ agent frameworks including LangGraph, the Vercel AI SDK, the OpenAI and Claude Agent SDKs, Google ADK, Mastra, Pydantic AI, and more.",
   "author": "duyet",
   "homepage": "https://github.com/duyet/build-agent",
   "repository": "https://github.com/duyet/build-agent",

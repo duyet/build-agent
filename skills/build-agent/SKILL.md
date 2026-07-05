@@ -19,6 +19,14 @@ Scaffold and grow AI-agent applications. This skill is **stack-agnostic**: it
 helps you choose a framework, then builds the agent loop, tools, API surface,
 UI, observability, and deployment to match the user's real requirements.
 
+## What this skill does
+
+- **Two entry modes** — interviews on an empty repo; detects and confirms the stack on an existing one.
+- **Recommends a framework** (or none) from the 13 it knows — see the chooser in Step 3.
+- **Verifies against live docs** before writing any framework code — never stale APIs.
+- **Scaffolds every layer** — agent core, tools, model access, API, UI, persistence, observability, deploy.
+- **Cross-cutting references** — tool calling, skills, tracing/observability, AI gateways, and model-specific prompting.
+
 ## Operating principle: verify before you build
 
 Agent frameworks move fast. **Never rely on memory for framework APIs.** Before

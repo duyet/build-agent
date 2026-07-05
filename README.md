@@ -8,6 +8,15 @@
 
 # build-agent
 
+## Features
+
+- **Two entry modes** — interviews you on an empty repo; detects and confirms your stack on an existing one.
+- **Framework-aware** — recommends the right one (or none) across 13 frameworks: LangGraph, DeepAgents, Pydantic AI, Vercel AI SDK, Mastra, Cloudflare Agents SDK, TanStack AI, Google ADK, OpenAI Agents SDK, Claude Agent SDK, Eve, Flue, Pi.
+- **Verify before building** — pulls live official docs (Context7 / `llms.txt` / WebFetch / the installed package) so it never writes stale API code.
+- **End-to-end scaffolding** — agent core → tools → model access → API → UI → persistence → observability → deploy, verifying each layer runs.
+- **Cross-cutting concepts** — tool calling, building skills, tracing & observability, and AI gateways (OpenRouter, Cloudflare AI Gateway).
+- **Dual plugin** — one shared skill shipped as both a Claude Code plugin and a Codex plugin.
+
 A single **Agent Skill** that knows how to build AI-agent applications
 end-to-end — from an empty repo or an existing codebase. It interviews you when
 requirements are unclear, detects your stack when a project already exists, then
